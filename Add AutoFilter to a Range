@@ -1,4 +1,4 @@
-Function fn_AddFilter(in_Workbook As Workbook, in_SheetName As String, in_Range As Range)
+Function fn_Create_Filter(in_Workbook As Workbook, in_SheetName As String, in_Range As Range)
 Dim ws_Filter_Sheet As Worksheet
 Dim wb_Filter_WorkBook As Workbook
 Dim rng_Filter_Range As Range
