@@ -1,0 +1,16 @@
+Function fn_AddFilter(in_Workbook As Workbook, in_SheetName As String, in_Range As Range)
+Dim ws_Filter_Sheet As Worksheet
+Dim wb_Filter_WorkBook As Workbook
+Dim rng_Filter_Range As Range
+
+Set wb_Filter_WorkBook = in_Workbook
+Set ws_Filter_Sheet = wb_Filter_WorkBook.Worksheets(in_SheetName)
+Set rng_Filter_Range = ws_Filter_Sheet.Range(in_Range.Address)
+
+If ws_Filter_Sheet.AutoFilterMode = True Then
+    rng_Filter_Range.AutoFilter
+End If
+
+rng_Filter_Range.AutoFilter
+
+End Function
