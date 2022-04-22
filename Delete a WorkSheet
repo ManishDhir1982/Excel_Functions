@@ -1,0 +1,7 @@
+Function fn_Delete_WorkSheet(in_Workbook As Workbook, in_SheetName As String)
+
+Application.DisplayAlerts = False
+in_Workbook.Sheets(in_SheetName).Delete
+Application.DisplayAlerts = True
+
+End Function
