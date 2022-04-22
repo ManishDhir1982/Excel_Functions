@@ -1,0 +1,9 @@
+Function fn_Add_Filters(in_rng_AutoFilter As Range)
+
+With in_rng_AutoFilter
+    'Add Multiple Fileds and Criteria Here
+    .AutoFilter Field:=17, Criteria1:=">=50000"
+    .AutoFilter Field:=4, Criteria1:="=Active", Operator:=xlOr, Criteria2:="=Locked"
+End With
+
+End Function
