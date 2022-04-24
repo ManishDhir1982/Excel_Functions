@@ -1,9 +1,15 @@
 Function fn_Add_Formula_To_Range(in_rng_for_Formula As Range, in_str_Formula As String)
+
+'-----------------------------------------------------------------------------------------
+'         Created By: Tarun Chauhan
+'         Date: 23-April-2022
+
 ' This function Adds a Formula provided in String to the Range Object
 
-'What it needed to get the function running
+'What do you need to provide to the function
   'It needs a Range Object to Insert the Formula to - Example: ActiveSheet.Range("B3:B10")
   'It need the Formula in String (text) format - example: =SUM(A1:A2)
+'-----------------------------------------------------------------------------------------
 
 ' 1 - Put the Formula in the first Cell of the Provided Range
 in_rng_for_Formula.Cells(1, 1).Formula = in_str_Formula
