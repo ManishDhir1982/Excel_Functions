@@ -1,5 +1,17 @@
 Function fn_Add_Column(in_rng_Base_Range_For_New_Column As Range)
 
-    in_rng_Base_Range_For_New_Column.EntireColumn.Insert
+'-----------------------------------------------------------------------------------------
+'         Created By: Tarun Chauhan
+'         Date: 23-April-2022
+
+' This function Adds a New Column in the Given Range
+
+'What do you need to provide to the function
+  'It needs the Cell Address where the New Column will be Inserted - Example: ActiveWorkbook.Sheets(1).Range("C1")
+    'In the above Example, the Column will be Inserted at Column C
+'-----------------------------------------------------------------------------------------
+
+' 1 - Insert an Entire Column in the Range Provided
+in_rng_Base_Range_For_New_Column.EntireColumn.Insert
 
 End Function
