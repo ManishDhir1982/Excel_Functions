@@ -1,7 +1,23 @@
 Function fn_Delete_WorkSheet(in_Workbook As Workbook, in_SheetName As String)
 
+'-----------------------------------------------------------------------------------------
+'         Created By: Tarun Chauhan
+'         Date: 23-April-2022
+
+' This function Deletes the Worksheet from the given Workbook Object
+
+'What do you need to provide to the function
+  'It needs an Workbook Object to Delete the WorkSheet From - Example: ActiveWorkbook
+  'It need the Name of the Sheet that needs to be deleted in String (text) format - example: "DEP", "Filtered_Data"
+'-----------------------------------------------------------------------------------------
+
+' 1 - Disable the Alerts so that you dont get the confirmation message
 Application.DisplayAlerts = False
+
+' 2 - Delete the Sheet
 in_Workbook.Sheets(in_SheetName).Delete
+
+' 3 - Re-Enable the Alerts
 Application.DisplayAlerts = True
 
 End Function
