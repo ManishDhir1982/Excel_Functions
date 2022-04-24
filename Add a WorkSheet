@@ -1,5 +1,17 @@
 Function fn_Add_WorkSheet(in_Workbook As Workbook, in_SheetName As String)
 
+'-----------------------------------------------------------------------------------------
+'         Created By: Tarun Chauhan
+'         Date: 23-April-2022
+
+' This function Adds a New Worksheet to the End of the given Workbook Object
+
+'What do you need to provide to the function
+  'It needs an Workbook Object to Insert the WorkSheet Into - Example: ActiveWorkbook
+  'It need the New SheetName in String (text) format - example: "DEP", "Filtered_Data"
+'-----------------------------------------------------------------------------------------
+
+' 1 - Add the New WorkSheet after the Last Sheet on the given WorkBook
 in_Workbook.Sheets.Add(After:=in_Workbook.Sheets(in_Workbook.Sheets.Count)).Name = in_SheetName
 
 End Function
