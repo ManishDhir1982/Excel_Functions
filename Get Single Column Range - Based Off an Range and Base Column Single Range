@@ -1,0 +1,25 @@
+Function fn_Get_Single_Column_Range_From_Range(in_rng_FullRange As Range, in_rng_Column_Range_Base As Range) As Range
+'-----------------------------------------------------------------------------------------
+'         Created By: Tarun Chauhan
+'         Date: 01-May-2022
+
+' This function Gets the Column Range based Off a given Range
+
+'What do you need to provide to the function
+  'It needs the Full Range Address the New Column will be based off - Example: ActiveWorkbook.Sheets(1).Range("C1:E1")
+  'It also needs the Base Range of the Column  - Example: ActiveWorkbook.Sheets(1).Range("D1")
+'-----------------------------------------------------------------------------------------
+Dim rng_New_Column_Range As Range
+Dim dbl_Last_Row As Double
+Dim dbl_Last_Column As Double
+
+dbl_Last_Row = in_rng_FullRange.Rows.Count + (in_rng_FullRange.Cells(1, 1).Row - 1)
+
+'Column is not Used as of Now in the Function
+'dbl_Last_Column = in_rng_InsertColumnInRange.Columns.Count + (in_rng_InsertColumnInRange.Cells(1, 1).Column - 1)
+
+Set rng_New_Column_Range = Range(in_rng_Column_Range_Base, in_rng_Column_Range_Base.Offset(dbl_Last_Row - in_rng_Column_Range_Base.Row, 0))
+
+Set fn_Get_Single_Column_Range_From_Range = rng_New_Column_Range
+
+End Function
