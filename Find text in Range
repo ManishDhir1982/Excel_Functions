@@ -1,4 +1,15 @@
 Function fn_Find_In_Range(in_str_Find_What As String, in_rng_Find_In_Range As Range) As Range
+'-----------------------------------------------------------------------------------------
+'         Created By: Tarun Chauhan
+'         Date: 23-April-2022
+
+' This function Looks for a Specific String in a Range and returns the containg range
+
+'What do you need to provide to the function
+  'Text that you are looking for in a range - Example: "Find Me"
+  'The Range that needs to be Searched - Example: ActiveSheet.Range("A1:Z26")
+'-----------------------------------------------------------------------------------------
+
 Dim rng_Found_Result As Range
 
 If Not in_rng_Find_In_Range.Find(What:=in_str_Find_What) Is Nothing Then
