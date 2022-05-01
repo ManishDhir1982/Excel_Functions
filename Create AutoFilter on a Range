@@ -1,4 +1,14 @@
 Function fn_Create_Filter(in_Sheet As Worksheet, in_Range As Range)
+'-----------------------------------------------------------------------------------------
+'         Created By: Tarun Chauhan
+'         Date: 23-April-2022
+
+' This function Adds an AutoFilter to a Range
+
+'What do you need to provide to the function
+  'It needs a Worksheet where you want to Add An Auto Filter - Example: ActiveSheet
+  'It need the Range Where you Want to Add the Auto Filter - Example: ActiveWorkbook.Worksheet("Name").Range("A1:Z26")
+'-----------------------------------------------------------------------------------------
 
 Dim rng_Filter_Range As Range
 
