@@ -1,8 +1,17 @@
 Function fn_Add_Filters(in_rng_AutoFilter As Range)
+'-----------------------------------------------------------------------------------------
+'         Created By: Tarun Chauhan
+'         Date: 23-April-2022
+
+' This function Adds Filters to AutoFilter to a Range
+
+'What do you need to provide to the function
+  'It need the Range Where you Want to Add the Auto Filter - Example: ActiveWorkbook.Worksheet("Name").Range("A1:Z26")
+'-----------------------------------------------------------------------------------------
 
 With in_rng_AutoFilter
     'Add Multiple Fileds and Criteria Here
-    .AutoFilter Field:=17, Criteria1:=">0"
+    .AutoFilter Field:=17, Criteria1:=">1"
     .AutoFilter Field:=4, Criteria1:="=Active", Operator:=xlOr, Criteria2:="=Locked"
     .AutoFilter Field:=3, Criteria1:=Array("20% Commission", "Normal", "Suspicious", "Time Out"), Operator:=xlFilterValues
 End With
