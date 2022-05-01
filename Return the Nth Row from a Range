@@ -1,0 +1,18 @@
+Function fn_Get_Nth_Row_From_A_Range(in_rng_Range_To_Pull_Row_From As Range, _
+                                        in_int_Row_Number_To_Pull As Double) As Range
+'-----------------------------------------------------------------------------------------
+'         Created By: Tarun Chauhan
+'         Date: 01-May-2022
+
+' This function Returns the Range of the Nth Row (in_int_Row_Number_To_Pull) from a specified Range (in_rng_Range_To_Pull_Row_From)
+
+'What do you need to provide to the function
+  'The Range from which the Nth Row Will be Returned - Example: ActiveSheet.Range("A1:Z26")
+  'Number represnting the Row Number - Example: 20
+'-----------------------------------------------------------------------------------------
+
+Dim rng_Row_To_Return_Address As Range
+
+Set rng_Row_To_Return_Address = Range(in_rng_Range_To_Pull_Row_From.Cells(in_int_Row_Number_To_Pull, 1).Address, in_rng_Range_To_Pull_Row_From.Cells(in_int_Row_Number_To_Pull, in_rng_Range_To_Pull_Row_From.Columns.Count).Address)
+
+End Function
