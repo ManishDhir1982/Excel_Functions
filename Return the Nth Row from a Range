@@ -15,4 +15,6 @@ Dim rng_Row_To_Return_Address As Range
 
 Set rng_Row_To_Return_Address = Range(in_rng_Range_To_Pull_Row_From.Cells(in_int_Row_Number_To_Pull, 1).Address, in_rng_Range_To_Pull_Row_From.Cells(in_int_Row_Number_To_Pull, in_rng_Range_To_Pull_Row_From.Columns.Count).Address)
 
+set fn_Get_Nth_Row_From_A_Range = fn_Get_Nth_Row_From_A_Range
+
 End Function
