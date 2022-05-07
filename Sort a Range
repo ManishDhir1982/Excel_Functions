@@ -1,8 +1,20 @@
-Function fn_Sort_Data(in_Sheet As Worksheet, in_rng_Sort_Range As Range, in_str_Sort_By_Range As String)
+Function fn_Sort_Data(in_rng_Sort_Range As Range, in_str_Sort_By_Range As Range)
+
+'-----------------------------------------------------------------------------------------
+'         Created By: Tarun Chauhan
+'         Date: 06-May-2022
+
+' This function Sorts a Given Range based on the Sort Range Provided
+
+'What do you need to provide to the function
+  'It needs the Range Object that needs to be sorted - Example: ActiveWorkbook.Sheets(1).Range("C1:Z26")
+  'It needs the Range Object that will be used to Sort the Data Range - Example: ActiveWorkbook.Sheets(1).Range("D1")
+    'In the above Example, the Data will be Sorted by Column C
+'-----------------------------------------------------------------------------------------
 
 With in_rng_Sort_Range
     'Add Multiple Sort Orders Here
-    .Sort Key1:=in_Sheet.Range(str_Sort_By_Range), _
+    .Sort Key1:=in_str_Sort_By_Range, _
         order1:=xlDescending, _
         Header:=xlYes, _
         Orientation:=xlTopToBottom, _
@@ -10,3 +22,5 @@ With in_rng_Sort_Range
 End With
 
 End Function
+
+
