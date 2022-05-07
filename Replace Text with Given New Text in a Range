@@ -10,7 +10,7 @@ Function fn_Replace_Text_In_Range(in_str_Text_To_Replace As String, in_str_Repla
 'What do you need to provide to the function
   'Text that needs to be Replaced - Example: "String 1"
   'The Replacement Text - Example: "String 1", ""
-  'It also needs the Range To Look for Replacement  - Example: ActiveWorkbook.Sheets(1).Range("D1")
+  'It also needs the Range To Look for Replacement  - Example: ActiveWorkbook.Sheets(1).Range("D1:D10")
 '-----------------------------------------------------------------------------------------
 in_rng_Range.Replace What:=in_str_Text_To_Replace, _
         Replacement:=in_str_Replace_With, _
