@@ -1,0 +1,5 @@
+Function fn_Delete_Column(in_rng_Base_Range_For_New_Column As Range)
+
+in_rng_Base_Range_For_New_Column.EntireColumn.Delete xlShiftToLeft
+
+End Function
