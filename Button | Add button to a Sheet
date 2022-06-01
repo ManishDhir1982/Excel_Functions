@@ -1,0 +1,32 @@
+Function fn_Add_Button_To_Sheet(in_ws_Worksheet As Worksheet, _
+                                in_rng_Button_Range As Range, _
+                                in_str_Button_Name As String, _
+                                in_str_Button_Caption As String)
+
+'-----------------------------------------------------------------------------------------
+'         Created By: Tarun Chauhan
+'         Date: 01-June-2022
+
+' This function Adds a Button to a Sheet
+
+'What do you need to provide to the function
+  'It need the Sheet Object (WorkSheet) Where you Want to Add the Button - Example: ActiveWorkbook.Worksheet("Name")
+  'It need the Range Object (Range) Where you Want to Add the Button - Example: ActiveWorkbook.Worksheet("Name").Range("A1:Z26")
+  'It need the Name (String) that you want to give to the Button - Example: "btn_MyButton"
+  'It need the Caption (String) that you want to give to the Button - Example: "Click Me!"
+  
+'-----------------------------------------------------------------------------------------
+
+Dim obj_Button As Button
+
+Set obj_Button = in_ws_Worksheet.Buttons.Add(in_rng_Button_Range.Left, in_rng_Button_Range.Top, _
+                                            in_rng_Button_Range.Width, in_rng_Button_Range.Height)
+
+With obj_Button
+    obj_Button.Caption = in_str_Button_Caption
+    obj_Button.Name = in_str_Button_Name
+End With
+
+Set obj_Button = Nothing
+
+End Function
