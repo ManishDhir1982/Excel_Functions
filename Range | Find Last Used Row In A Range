@@ -1,4 +1,4 @@
-Function fn_Get_Last_Used_Row_In_Range(in_rng_FindLastUsedRowInRange As Range) As Range
+Function fn_Get_Last_Used_Row_First_Cell_In_Range(in_rng_FindInRange As Range) As Range
 '-----------------------------------------------------------------------------------------
 '         Created By: Tarun Chauhan
 '         Date: 03-June-2022
