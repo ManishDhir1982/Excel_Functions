@@ -1,4 +1,4 @@
-Function fn_Get_Last_Row_Of_Range(in_rng_FindLastColumnInRange As Range) As Range
+Function fn_Get_Last_Row_Of_Range(in_rng_FindLastRowInRange As Range) As Range
 '-----------------------------------------------------------------------------------------
 '         Created By: Tarun Chauhan
 '         Date: 03-June-2022
@@ -8,11 +8,10 @@ Function fn_Get_Last_Row_Of_Range(in_rng_FindLastColumnInRange As Range) As Rang
 'What do you need to provide to the function
   'It needs the Range Address that you want find the Last Column of - Example: ActiveWorkbook.Sheets(1).Range("C1:E1")
 '-----------------------------------------------------------------------------------------
-Dim dbl_Last_Column As Double
-Dim rng_Last_Column_Range As Range
+Dim rng_Last_Row_Range As Range
 
-Set rng_Last_Column_Range = in_rng_FindLastColumnInRange.Cells(1, 1).Offset(0, in_rng_FindLastColumnInRange.Rows.Count - 1)
+Set rng_Last_Row_Range = in_rng_FindLastRowInRange.Cells(1, 1).Offset(0, in_rng_FindLastRowInRange.Rows.Count - 1)
 
-Set fn_Get_Last_Column_In_Range = rng_Last_Column_Range
+Set fn_Get_Last_Row_Of_Range = rng_Last_Row_Range
 
 End Function
