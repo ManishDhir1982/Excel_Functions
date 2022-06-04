@@ -1,4 +1,5 @@
 Function fn_Get_Last_Used_Row_First_Cell_In_Range(in_rng_FindInRange As Range) As Range
+
 '-----------------------------------------------------------------------------------------
 '         Created By: Tarun Chauhan
 '         Date: 03-June-2022
@@ -6,18 +7,29 @@ Function fn_Get_Last_Used_Row_First_Cell_In_Range(in_rng_FindInRange As Range) A
 ' This function returns the First Cell in the Last Used Row of the given range
 
 'What do you need to provide to the function
-  ' It needs the Range Address that you want find the Last Row of - Example: ActiveWorkbook.Sheets(1).Range("C1:E11")
+  'It needs the Range Address that you want find the Last Row of - Example: ActiveWorkbook.Sheets(1).Range("C1:E11")
 '-----------------------------------------------------------------------------------------
 Dim dbl_Last_Cell As Double
 Dim rng_Last_Used_Row_Range As Range
 
+
+dbl_NonBlankCells = 0
+
 For Each rng_Temp In in_rng_FindInRange.Columns
-    If rng_Temp.Cells.SpecialCells(xlCellTypeConstants).Count > dbl_NonBlankCells Then
-        dbl_Last_Cell = rng_Temp.Cells(rng_Temp.Rows.Count, 1).End(xlUp).Row
+    If Not (WorksheetFunction.CountIf(rng_Temp, "") = in_rng_FindInRange.Rows.Count) Then
+    If rng_Temp.Cells.SpecialCells(xlCellTypeConstants).Count > dbl_Last_Cell Then
+        
+        If rng_Temp.Cells(rng_Temp.Rows.Count, 1) = "" Then
+            dbl_Last_Cell = rng_Temp.Cells(rng_Temp.Rows.Count, 1).End(xlUp).Row
+        Else
+            dbl_Last_Cell = rng_Temp.Rows.Count
+        End If
+        
         Set rng_Last_Used_Row_Range = rng_Temp
+    End If
     End If
 Next rng_Temp
 
-Set fn_Get_Last_Used_Row_First_Cell_In_Range = rng_Last_Used_Row_Range.Cells(dbl_Last_Cell, 1)
+Set fn_Get_Last_Used_Row_First_Cell_In_Range = in_rng_FindInRange.Cells(dbl_Last_Cell, 1)
 
 End Function
