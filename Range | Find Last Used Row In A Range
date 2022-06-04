@@ -17,7 +17,6 @@ dbl_NonBlankCells = 0
 
 For Each rng_Temp In in_rng_FindInRange.Columns
     If Not (WorksheetFunction.CountIf(rng_Temp, "") = in_rng_FindInRange.Rows.Count) Then
-    If rng_Temp.Cells.SpecialCells(xlCellTypeConstants).Count > dbl_Last_Cell Then
         
         If rng_Temp.Cells(rng_Temp.Rows.Count, 1) = "" Then
             dbl_Last_Cell = rng_Temp.Cells(rng_Temp.Rows.Count, 1).End(xlUp).Row
@@ -26,7 +25,6 @@ For Each rng_Temp In in_rng_FindInRange.Columns
         End If
         
         Set rng_Last_Used_Row_Range = rng_Temp
-    End If
     End If
 Next rng_Temp
 
