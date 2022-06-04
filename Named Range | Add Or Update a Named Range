@@ -1,0 +1,19 @@
+Public Function fn_Add_Update_Name_Manager(in_wb_WorkBook As Workbook, _
+                                    in_rng_Start_Range As Range, _
+                                    in_str_Name_Manager_Name As String)
+
+'-----------------------------------------------------------------------------------------
+'         Created By: Tarun Chauhan
+'         Date: 03-June-2022
+
+' This function Adds a Named Range to the Workbook
+
+'What do you need to provide to the function
+  'It needs the Workbook Object where the Named Range will be Added - Example: Activeworkbook
+  'It needs the Range Object that needs to be given a Name - Example: ActiveWorkbook.Worksheet("Name").Range("A1:Z26")
+  'It needs the name to be given to the Named Range - Example: "My_Named_Range"
+'-----------------------------------------------------------------------------------------
+
+in_wb_WorkBook.Names.Add Name:=in_str_Name_Manager_Name, RefersTo:=in_rng_Start_Range
+
+End Function
