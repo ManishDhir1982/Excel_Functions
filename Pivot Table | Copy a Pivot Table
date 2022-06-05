@@ -1,0 +1,23 @@
+Function fn_Copy_PivotTable(in_pt_SourcePivot As PivotTable, _
+                             in_rng_DestinationRange As Range, _
+                             in_str_NewPivotName As String)
+                             
+
+'-----------------------------------------------------------------------------------------
+'         Created By: Tarun Chauhan
+'         Date: 05-June-2022
+
+' This function Copies an Existing Pivot Table to the Provided Destination Range
+
+'What do you need to provide to the function
+  'It needs the Pivot Table Object to be Copied
+  'It need the Destination Range Object
+  'It need the String Name for the Newly Copied Pivot Table
+
+'-----------------------------------------------------------------------------------------
+
+in_pt_SourcePivot.TableRange2.Copy Destination:=in_rng_DestinationRange
+in_rng_DestinationRange.Activate
+ActiveCell.PivotTable.Name = in_str_NewPivotName
+
+End Function
