@@ -1,0 +1,20 @@
+Function fn_Remove_Row_Field_PivotTables(in_pvt_Table As PivotTable, _
+                                        in_str_Field As String)
+
+'-----------------------------------------------------------------------------------------
+'         Created By: Tarun Chauhan
+'         Date: 11-June-2022
+
+' This function Adds a New Row Field to the Gvven Pivot Table Object
+
+'What do you need to provide to the function
+  'It needs the Pivot Table Object
+  'It need the Pivot Table Filed Name that needs to be removed from the Pivot Table Row
+
+'-----------------------------------------------------------------------------------------
+With in_pvt_Table.RowFields(in_str_Field)
+    .Orientation = xlHidden
+End With
+
+
+End Function
