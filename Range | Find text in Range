@@ -13,7 +13,8 @@ Function fn_Find_In_Range(in_str_Find_What As String, in_rng_Find_In_Range As Ra
 Dim rng_Found_Result As Range
 
 If Not in_rng_Find_In_Range.Find(What:=in_str_Find_What) Is Nothing Then
-    Set rng_Found_Result = in_rng_Find_In_Range.Find(What:=in_str_Find_What)
+    Set rng_Found_Result = in_rng_Find_In_Range.Find(What:=in_str_Find_What, _
+                            Lookat:=xlWhole)
 End If
 
 Set fn_Find_In_Range = rng_Found_Result
