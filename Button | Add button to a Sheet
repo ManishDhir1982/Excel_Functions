@@ -1,7 +1,9 @@
 Function fn_Add_Button_To_Sheet(in_ws_Worksheet As Worksheet, _
                                 in_rng_Button_Range As Range, _
                                 in_str_Button_Name As String, _
-                                in_str_Button_Caption As String)
+                                in_str_Button_Caption As String, _
+                                in_int_Button_Height As Integer, _
+                                in_int_Button_Width As Integer)
 
 '-----------------------------------------------------------------------------------------
 '         Created By: Tarun Chauhan
@@ -19,6 +21,8 @@ Function fn_Add_Button_To_Sheet(in_ws_Worksheet As Worksheet, _
 
 Dim obj_Button As Button
 
+Set in_rng_Button_Range = Range(in_rng_Button_Range, in_rng_Button_Range.Offset(in_int_Button_Height, in_int_Button_Width))
+'MsgBox in_rng_Button_Range.Address
 Set obj_Button = in_ws_Worksheet.Buttons.Add(in_rng_Button_Range.Left, in_rng_Button_Range.Top, _
                                             in_rng_Button_Range.Width, in_rng_Button_Range.Height)
 
