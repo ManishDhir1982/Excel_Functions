@@ -1,0 +1,23 @@
+Function fn_Look_For_Values_In_Column_Of_A_Range(in_str_LookUp_Value As String, _
+                                                in_int_Column_Number As Integer, _
+                                                in_rng_LookUp_Range As Range) As Range
+                                                
+Dim rng_LookUp_Column As Range
+Dim rng_LookUp_Ranges_Result As Range
+Dim rng_Temp As Range
+
+Set rng_LookUp_Column = Range(in_rng_LookUp_Range.Columns(in_int_Column_Number).Address)
+
+For Each rng_Temp In rng_LookUp_Column
+    If rng_Temp.Value = in_str_LookUp_Value Then
+        If rng_LookUp_Ranges_Result Is Nothing Then
+            Set rng_LookUp_Ranges_Result = rng_Temp
+        Else
+            Set rng_LookUp_Ranges_Result = Union(rng_LookUp_Ranges_Result, rng_Temp)
+        End If
+    End If
+Next rng_Temp
+
+'msgbox rng_LookUp_Ranges_Result.Areas.Count
+Set fn_Look_For_Values_In_Column_Of_A_Range = rng_LookUp_Ranges_Result
+End Function
