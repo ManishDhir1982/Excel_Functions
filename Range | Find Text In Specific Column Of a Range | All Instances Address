@@ -2,6 +2,18 @@ Function fn_Look_For_Values_In_Column_Of_A_Range(in_str_LookUp_Value As String, 
                                                 in_int_Column_Number As Integer, _
                                                 in_rng_LookUp_Range As Range) As Range
                                                 
+'-----------------------------------------------------------------------------------------
+'         Created By: Tarun Chauhan
+'         Date: 12-July-2022
+
+' This function Returns the Address of all the Matching Instances of String Found in a Specific Column of a Range
+
+'What do you need to provide to the function
+  'The string that needs to be searched in the Range - Example: "Find Me"
+  'The Column Number in the Range that needs to be Searched - Example: 1
+  'The Ranage object that needs to be searched - Example: Activeworkbook.Worksheets(1).range(C1:D26)
+'-----------------------------------------------------------------------------------------
+                                                
 Dim rng_LookUp_Column As Range
 Dim rng_LookUp_Ranges_Result As Range
 Dim rng_Temp As Range
