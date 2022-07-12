@@ -1,10 +1,11 @@
-Function fn_Get_Last_Used_Row_First_Cell_In_Range(in_rng_FindInRange As Range) As Range
+Function fn_Get_Last_Used_Row_Cell_In_Range(in_rng_FindInRange As Range, _
+                                            in_str_Last_First_Nth_Column As Variant) As Range
 
 '-----------------------------------------------------------------------------------------
 '         Created By: Tarun Chauhan
 '         Date: 12-June-2022
 
-' This function returns the First Cell in the Last Used Row of the given range - ONLY USED Row
+' This function returns the First Cell / Last Cell Used Cell from the Nth Column the given range - ONLY Rows that have Values
 ' This function checks all Columns in the Range and Return the Last Row in the Column that has the Highest Rows Used
 ' This Function Works Column Wise
 
@@ -13,10 +14,12 @@ Function fn_Get_Last_Used_Row_First_Cell_In_Range(in_rng_FindInRange As Range) A
 '-----------------------------------------------------------------------------------------
 Dim dbl_Last_Cell As Double
 Dim rng_Last_Used_Cell_In_Column As Range
+Dim rng_Highest_Cell As Range
 
-dbl_Last_Cell = 1
+dbl_Last_Cell = 0
 
 For Each rng_Temp In in_rng_FindInRange.Columns
+
     If Not (WorksheetFunction.CountIf(rng_Temp, "") = in_rng_FindInRange.Rows.Count) Then
         
         If rng_Temp.Cells(rng_Temp.Rows.Count, 1) = "" Then
@@ -27,13 +30,24 @@ For Each rng_Temp In in_rng_FindInRange.Columns
         
         If rng_Last_Used_Cell_In_Column.Row > dbl_Last_Cell Then
             dbl_Last_Cell = rng_Last_Used_Cell_In_Column.Row
+            Set rng_Highest_Cell = rng_Last_Used_Cell_In_Column
         End If
 
     End If
 Next rng_Temp
 
-    dbl_Last_Cell = (dbl_Last_Cell - in_rng_FindInRange.Cells(1, 1).Row) + 1
-    
-Set fn_Get_Last_Used_Row_First_Cell_In_Range = in_rng_FindInRange.Cells(dbl_Last_Cell, 1)
+If dbl_Last_Cell = 0 Then
+    Set rng_Highest_Cell = in_rng_FindInRange.Cells(1, 1)
+End If
+
+If in_str_Last_First_Nth_Column = "First" Then
+    Set rng_Highest_Cell = in_rng_FindInRange.Cells(rng_Highest_Cell.Row - (in_rng_FindInRange.Cells(1, 1).Row - 1), 1)
+ElseIf in_str_Last_First_Nth_Column = "Last" Then
+    Set rng_Highest_Cell = in_rng_FindInRange.Cells(rng_Highest_Cell.Row - (in_rng_FindInRange.Cells(1, 1).Row - 1), in_rng_FindInRange.Columns.Count)
+Else
+    Set rng_Highest_Cell = in_rng_FindInRange.Cells(rng_Highest_Cell.Row - (in_rng_FindInRange.Cells(1, 1).Row - 1), in_str_Last_First_Nth_Column)
+End If
+
+Set fn_Get_Last_Used_Row_Cell_In_Range = rng_Highest_Cell
 
 End Function
