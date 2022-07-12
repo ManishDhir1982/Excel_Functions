@@ -14,9 +14,6 @@ Function fn_Resize_Row_Range(in_rng_Resize As Range, _
   'The Number of Rows to be Resized - 2
 '-----------------------------------------------------------------------------------------
 
-Dim rng_New_Start_Range As Range
-Dim rng_End_Range As Range
-
 Dim rng_Resized_Range As Range
 
 If in_Resize_From = "Bottom" Then
@@ -24,10 +21,9 @@ If in_Resize_From = "Bottom" Then
 End If
 
 If in_Resize_From = "Top" Then
-    Set rng_New_Start_Range = in_rng_Resize.Offset(in_Int_Number_Of_Rows, 0).Cells(1, 1)
-    Set rng_End_Range = in_rng_Resize.Cells(in_rng_Resize.Rows.Count, in_rng_Resize.Columns.Count)
-    rng_Resized_Range = in_rng_Resize.Range(in_rng_Resize.Cells(rng_New_Start_Range.Row, rng_New_Start_Range.Column), _
-                                in_rng_Resize.Cells(rng_End_Range.Row, rng_End_Range.Column))
+    Set rng_Resized_Range = in_rng_Resize.Offset(in_Int_Number_Of_Rows, 0).Resize(in_rng_Resize.Rows.Count - in_Int_Number_Of_Rows, in_rng_Resize.Columns.Count)
 End If
-    Set fn_Resize_Row_Range = rng_Resized_Range
+
+Set fn_Resize_Row_Range = rng_Resized_Range
+
 End Function
